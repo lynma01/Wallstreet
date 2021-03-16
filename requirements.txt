@@ -4,6 +4,8 @@ beautifulsoup4==4.9.3
 certifi==2020.12.5
 chardet==4.0.0
 colorama==0.4.4
+edgar==5.4.1
+fuzzywuzzy==0.18.0
 idna==2.10
 iniconfig==1.1.1
 lxml==4.6.2
@@ -15,8 +17,10 @@ pluggy==0.13.1
 py==1.10.0
 pyparsing==2.4.7
 pytest==6.2.2
+python-Levenshtein==0.12.2
 requests==2.25.1
 six==1.15.0
 soupsieve==2.2
 toml==0.10.2
+tqdm==4.59.0
 urllib3==1.26.4
