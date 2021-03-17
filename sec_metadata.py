@@ -8,7 +8,6 @@ class EdgarMetadata():
         self.cik = cik
         self.filing = filing
         self.no_filings = no_filings
-
         self.get_filing_metadata()
 
     @classmethod
@@ -24,8 +23,6 @@ class EdgarMetadata():
 
             if 'element' in doc.keys():
                 del doc["element"]
-
             filings.append(doc)
-
 
         return(filings)
