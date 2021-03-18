@@ -2,8 +2,8 @@
   "canvas": {
     "width": 2000,
     "height": 2000,
-    "scrollTop": 0,
-    "scrollLeft": 0,
+    "scrollTop": 2,
+    "scrollLeft": 4,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -37,13 +37,13 @@
   "table": {
     "tables": [
       {
-        "name": "metadata",
+        "name": "10-K Metadata",
         "comment": "",
         "columns": [
           {
             "name": "url",
             "comment": "",
-            "dataType": "var",
+            "dataType": "VARCHAR",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -64,9 +64,78 @@
             "id": "7ebf73fa-bb93-8037-8d3a-ca86dabbb49b"
           },
           {
+            "name": "cik",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "fefd491d-9f3c-5140-fe97-1acda6ef7308"
+          },
+          {
+            "name": "filing",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "9c32bf61-2a22-a819-214f-bec43a35a716"
+          },
+          {
+            "name": "fingerprint",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 68,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "9a55e456-4a3c-a283-5ad3-3f5e82857e0a"
+          },
+          {
             "name": "filing_date",
             "comment": "",
-            "dataType": "date",
+            "dataType": "DATE",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -84,12 +153,12 @@
               "widthDataType": 60,
               "widthDefault": 60
             },
-            "id": "fefd491d-9f3c-5140-fe97-1acda6ef7308"
+            "id": "a2c6e3f0-8d5c-44e8-8d9b-72f6f963efb1"
           },
           {
             "name": "accepted_date",
             "comment": "",
-            "dataType": "date",
+            "dataType": "DATETIME",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -104,41 +173,41 @@
               "pfk": false,
               "widthName": 90,
               "widthComment": 60,
-              "widthDataType": 60,
+              "widthDataType": 64,
               "widthDefault": 60
             },
-            "id": "9c32bf61-2a22-a819-214f-bec43a35a716"
+            "id": "0986d944-0eb3-dd09-3fd8-bb0ec2705b5c"
           },
           {
-            "name": "",
+            "name": "reporting_period",
             "comment": "",
-            "dataType": "",
+            "dataType": "DATE",
             "default": "",
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 60,
+              "widthName": 105,
               "widthComment": 60,
               "widthDataType": 60,
               "widthDefault": 60
             },
-            "id": "9a55e456-4a3c-a283-5ad3-3f5e82857e0a"
+            "id": "097ae847-4de0-6f7c-cdcc-de69b1caef59"
           }
         ],
         "ui": {
-          "active": true,
-          "left": 64,
-          "top": 114,
-          "zIndex": 25,
-          "widthName": 61,
+          "active": false,
+          "left": 63,
+          "top": 116,
+          "zIndex": 94,
+          "widthName": 91,
           "widthComment": 60
         },
         "id": "a61eaeb6-e84f-580e-16ed-e1bcebfb74d6"
@@ -147,7 +216,20 @@
     "indexes": []
   },
   "memo": {
-    "memos": []
+    "memos": [
+      {
+        "value": "this is the original datasource to be imported.",
+        "id": "d59ba9f7-82d7-c3c8-a501-b15fa220c953",
+        "ui": {
+          "active": true,
+          "left": 489,
+          "top": 164,
+          "zIndex": 98,
+          "width": 127,
+          "height": 100
+        }
+      }
+    ]
   },
   "relationship": {
     "relationships": []
