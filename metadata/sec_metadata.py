@@ -1,6 +1,7 @@
 from edgar import Company
 from collections import ChainMap
 import json
+import time
 
 class SecMeta:
     def __init__(self):
@@ -24,5 +25,9 @@ class SecMeta:
             for document in docs:
                 yield self.clean_filings(document, cik)
 
+startTime = time.time()
 
-print((list(SecMeta().get_filing_metadata(name="Oracle Corp", cik="0001341439", filing="10-K", no_filings=5))))
+list(SecMeta().get_filing_metadata(name="Oracle Corp", cik="0001341439", filing="10-K", no_filings=5))
+
+execTime = (time.time() - startTime)
+print('Execution time in seconds: ' + str(execTime))
