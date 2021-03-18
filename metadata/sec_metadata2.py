@@ -4,35 +4,28 @@ import json
 import time
 
 class SecMeta:
+
     def __init__(self):
         pass
 
     @classmethod
-    def clean_filings(cls, doc_to_append, cik):
+    def return_filings(cls, doc_to_append, appendee):
         doc_to_append = doc_to_append.__dict__
         del doc_to_append['element']
-        del doc_to_append['content']['Documents']
-        doc_to_append['cik'] = cik
-        return doc_to_append
+        appendee.append(doc_to_append)
+
     
     def get_filing_metadata(self, name, cik, filing, no_filings) -> list:
         company = Company(name, cik)
         tree = company.get_all_filings(filing_type = filing)
         docs = Company.get_documents(tree, no_of_documents= no_filings, as_documents=True)
+
+        filings = []
+
         if no_filings == 1:
-            return self.clean_filings(docs, cik)
+            self.return_filings(docs, filings)
         else:
             for document in docs:
-                yield self.clean_filings(document, cik)
+                self.return_filings(document, filings)
+        return(filings)
 
-
-startTime = time.time()
-
-list(SecMeta().get_filing_metadata(name="Oracle Corp", cik="0001341439", filing="", no_filings=500))
-
-execTime = (time.time() - startTime)
-print('Execution time in seconds: ' + str(execTime))
-
-"""
-
-"""
