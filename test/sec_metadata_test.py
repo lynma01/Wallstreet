@@ -22,7 +22,7 @@ class TestMetadata(unittest.TestCase):
             execTime = (time.time() - startTime)
             print('Execution time in seconds: ' + str(execTime))
 
-            --------- Results ---------
+                    --------- Results ---------
             python metadata/sec_metadata.py (5 samples)
             Execution time in seconds: 2.77056884765625
             
@@ -33,6 +33,9 @@ class TestMetadata(unittest.TestCase):
             Execution time in seconds: 18.38187527656555
 
             python metadata/sec_metadata2.py (500 samples)
-            Execution time in seconds: 12.406062364578247
+            Execution time in seconds: 18.86088514328003
+
+            python metadata/sec_metadata.py (500 samples)
+            Execution time in seconds: 13.800028705596924
 
         """

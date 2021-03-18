@@ -8,31 +8,34 @@ class SecMeta:
         pass
 
     @classmethod
-    def clean_filings(cls, doc_to_append, cik):
-        doc_to_append = doc_to_append.__dict__
-        del doc_to_append['element']
-        del doc_to_append['content']['Documents']
-        doc_to_append['cik'] = cik
-        return doc_to_append
+    def clean_filings(cls, doc_apnd, cik, filing):
+        doc_apnd = doc_apnd.__dict__
+        doc_apnd.pop('element')
+
+        for k in ["Documents", "Items"]:
+            if k in doc_apnd['content']: 
+                doc_apnd['content'].pop(k)
+
+        doc_apnd['cik'] = cik
+        doc_apnd['filing'] = filing
+        doc_apnd['fingerprint'] = cik + "+" + doc_apnd['content']['Filing Date']
+
+        for key, value in doc_apnd['content'].items():
+            doc_apnd[key] = value
+
+        del doc_apnd['content']
+        return doc_apnd
     
-    def get_filing_metadata(self, name, cik, filing, no_filings) -> list:
+    def get_filing_metadata(self, name, cik, filing, no_filings):
         company = Company(name, cik)
         tree = company.get_all_filings(filing_type = filing)
         docs = Company.get_documents(tree, no_of_documents= no_filings, as_documents=True)
         if no_filings == 1:
-            return self.clean_filings(docs, cik)
+            return self.clean_filings(docs, cik, filing)
         else:
             for document in docs:
-                yield self.clean_filings(document, cik)
+                yield self.clean_filings(document, cik, filing)
 
 
-startTime = time.time()
 
-list(SecMeta().get_filing_metadata(name="Oracle Corp", cik="0001341439", filing="", no_filings=500))
-
-execTime = (time.time() - startTime)
-print('Execution time in seconds: ' + str(execTime))
-
-"""
-
-"""
+print(list(SecMeta().get_filing_metadata(name="Oracle Corp", cik="0001341439", filing="10-K", no_filings=5)))
