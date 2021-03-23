@@ -4,5 +4,8 @@
 #pycache
 __pycache__
 
+#pytest
+.pytest_cache
+
 #python venv library
 wallstreet/
