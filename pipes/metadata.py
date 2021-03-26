@@ -3,7 +3,6 @@ from edgar import Company
 from dagster import (
     solid, 
     pipeline,  
-    logger,
     Dict
 )
 
@@ -43,6 +42,7 @@ def get_filing_metadata(context, name: str, cik: str, filing: str, no_filings: i
             context.log.info("metadata of type: " + type(output))
             return output
 
+# TODO #36 Create mod_defs for logging
 @pipeline
 def metadata_pipeline():
     get_filing_metadata()
