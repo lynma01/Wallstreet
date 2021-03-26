@@ -1,5 +1,5 @@
 from typing import Dict
-import common
+from .common import log_assert_type
 from edgar import Company
 from dagster import (
     solid, 
