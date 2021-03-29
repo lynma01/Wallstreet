@@ -27,7 +27,7 @@ defer==1.0.6
 defusedxml==0.7.1
 distlib==0.3.1
 distro-info===0.18ubuntu0.18.04.1
-docstring-parser==0.7.1
+docstring-parser==0.7.3
 edgar==5.4.1
 entrypoints==0.3
 filelock==3.0.12
