@@ -80,7 +80,7 @@ nbformat==5.1.2
 neovim==0.3.1
 netifaces==0.10.9
 oauth==1.0.1
-olefile==0.45.1
+olefile==0.46
 onboard==1.4.1
 ordereddict==1.1
 packaging==20.9
