@@ -130,7 +130,7 @@ SecretStorage==2.3.1
 sgt-launcher==0.2.4
 simplejson==3.13.2
 six==1.15.0
-soupsieve==2.2
+soupsieve==2.2.1
 SQLAlchemy==1.4.3
 systemd-python==234
 tabulate==0.8.9
