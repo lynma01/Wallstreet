@@ -105,7 +105,7 @@ pycrypto==2.6.1
 pycups==1.9.73
 pycurl==7.43.0.1
 Pygments==2.8.1
-pygobject==3.26.1
+pygobject==3.40.0
 pyparsing==2.4.7
 pyrsistent==0.17.3
 PySimpleSOAP==1.16.2
