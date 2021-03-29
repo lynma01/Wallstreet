@@ -72,7 +72,7 @@ MarkupSafe==1.1.1
 marshmallow==3.10.0
 menulibre==2.2.0
 mistune==0.8.4
-msgpack==0.5.6
+msgpack==1.0.2
 mugshot==0.4.0
 natsort==7.1.1
 nbconvert==5.6.1
